@@ -1,4 +1,4 @@
-package com.example.order.config;
+package com.example.order.component.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MapperConfig {
+public class MapperComponent {
 
     @Bean
     public ModelMapper buildMapper(){

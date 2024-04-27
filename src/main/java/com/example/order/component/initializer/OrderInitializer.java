@@ -1,4 +1,4 @@
-package com.example.order.util;
+package com.example.order.component.initializer;
 
 import com.example.order.entity.Order;
 import com.example.order.repo.OrderRepository;
