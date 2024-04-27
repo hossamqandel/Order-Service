@@ -26,16 +26,16 @@ public class OrderController {
         return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 
-    @GetMapping("/orders/users/{id}")
-    public ResponseEntity<List<OrderDTO>> getUserOrders(@PathVariable Long id){
-        List<OrderDTO> orders = orderService.getOrdersByUserId(id);
+    @GetMapping("/users/{userId}/orders")
+    public ResponseEntity<List<OrderDTO>> getUserOrders(@PathVariable Long userId){
+        List<OrderDTO> orders = orderService.getOrdersByUserId(userId);
         if (orders.isEmpty()) return ResponseEntity.noContent().build();
         return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 
-    @GetMapping("/orders/{id}")
-    public ResponseEntity<OrderDTO> getOrderDetails(@PathVariable Long id){
-        return new ResponseEntity<>(orderService.getOrderById(id), HttpStatus.OK);
+    @GetMapping("/orders/{orderId}")
+    public ResponseEntity<OrderDTO> getOrderDetails(@PathVariable Long orderId){
+        return new ResponseEntity<>(orderService.getOrderById(orderId), HttpStatus.OK);
     }
 
 
