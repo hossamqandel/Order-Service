@@ -5,22 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 @Entity
-@Table(name = "\"Orders\"")
+@Table(name = "statuses")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Order {
+public class Status {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long userId;
-    private Long statusId;
-
-    @OneToMany(mappedBy = "order")
-    private Set<OrderItem> orderItems;
-
+    private String status;
+    private boolean isActive;
 }

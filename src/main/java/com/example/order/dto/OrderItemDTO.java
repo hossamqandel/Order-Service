@@ -1,20 +1,19 @@
 package com.example.order.dto;
 
-import com.example.order.entity.OrderItem;
+import com.example.order.entity.Order;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDTO {
+public class OrderItemDTO {
 
     private Long id;
-    private Long userId;
-    private Integer statusId;
-    private Set<OrderItem> orderItems;
+    private Long orderId;
+    private Long productId;
+    private Integer quantity;
+    private Order order;
 
 }
