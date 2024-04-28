@@ -1,6 +1,7 @@
 package com.example.order.controller;
 
 import com.example.order.dto.OrderDTO;
+import com.example.order.dto.OrderItemDTO;
 import com.example.order.service.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -37,6 +38,14 @@ public class OrderController {
     public ResponseEntity<OrderDTO> getOrderDetails(@PathVariable Long orderId){
         return new ResponseEntity<>(orderService.getOrderById(orderId), HttpStatus.OK);
     }
+
+    @GetMapping("/orders/{orderId}/items")
+    public ResponseEntity<List<OrderItemDTO>> getUOrderItems(@PathVariable Long orderId){
+        List<OrderItemDTO> orders = orderService.getOrderItemsById(orderId);
+        if (orders.isEmpty()) return ResponseEntity.noContent().build();
+        return new ResponseEntity<>(orders, HttpStatus.OK);
+    }
+
 
 
 

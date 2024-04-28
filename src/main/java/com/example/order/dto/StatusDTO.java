@@ -4,16 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDTO {
+public class StatusDTO {
 
     private Long id;
-    private Long userId;
-    private Integer statusId;
-    private Set<OrderItemDTO> orderItems;
-
+    private String status;
+    private boolean isActive;
 }
